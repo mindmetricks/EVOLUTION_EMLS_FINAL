@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolutionary Mismatch Lifestyle</title>
+    
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+
+        .hero {
+            position: relative;
+            background: url('https://miro.medium.com/max/1800/0*DtjvxHl7y3RbX5KZ.jpg') no-repeat center center;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.7); /* Add inner shadow for effect */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, p {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 22px;
+            font-size: 1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #34495e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .rating label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .rating input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .question {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+
+        /* Align labels properly */
+        .label-left {
+            text-align: left;
+        }
+
+        .label-right {
+            text-align: right;
+        }
+
+        .question label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .rating-container {
+            display: flex;
+            flex-direction: column; /* Stack the scale and labels */
+            align-items: center; /* Center align the content */
+            gap: 2px; /* Add some spacing between the scale and the labels */
+        }
+
+        /* Styling for the rating scale */
+        .rating {
+            display: flex;
+            justify-content: center; /* Center the scale */
+            gap: 10px; /* Space between numbers */
+        }
+
+        /* Styling for labels below the scale */
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Full width to align left and right labels */
+            max-width: 400px; /* Optional: set a max-width to keep it aligned with scale */
+            font-size: 12px; /* Smaller text size */
+            color: #888; /* Lighter color */
+            margin-bottom: 30px;
+           
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Evolutionary Mismatch Lifestyle</h1>
+    </div>
+    <div class="content">
+        <h1>Evolutionary Mismatch Lifestyle Assessment</h1>
+
+
+<h2>Welcome to Your Evolutionary Mismatch Insight</h2>
+<p>
+    In today's fast-paced world, many of us live in ways that sharply contrast with the lifestyle our ancestors evolved to thrive in. The modern environment—filled with processed foods, sedentary routines, and constant digital engagement—can lead to health issues that our bodies and minds aren't fully equipped to handle.
+</p>
+
+<h3>What is the Evolutionary Mismatched Lifestyle Scale (EMLS)?</h3>
+<p>
+    Researchers have developed the <strong>Evolutionary Mismatched Lifestyle Scale (EMLS)</strong>, a scientifically validated tool designed to measure how your current lifestyle diverges from that of our hunter-gatherer ancestors. This scale examines key areas like diet, physical activity, social connections, and even media use, providing insights into how these mismatches may impact your well-being.
+</p>
+
+<h3>How Does It Work?</h3>
+<p>
+    You'll answer a series of questions that reflect modern-day behaviors in comparison to ancestral lifestyles. Based on your responses, you'll receive a score showing how closely aligned your lifestyle is with those of our ancestors.
+</p>
+<p>
+    Higher mismatch scores are associated with potential health risks like chronic illness, poor sleep, anxiety, and depression. The goal of this tool is to help you better understand the lifestyle factors that could be affecting your health and how you can make adjustments for a healthier life.
+</p>
+
+<h3>Start Your Journey</h3>
+<p>Complete the form below to find out how your lifestyle compares to the evolutionary standards of our ancestors. This will only take a few minutes. </p>
+
+<h1>Survey Questions</h1>
+
+<form action="/submit" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select...</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+    </select>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" required > <!-- size sets the visible number of items -->
+        <option value="">Select...</option>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Australia">Australia</option>
+        <option value="Austria">Austria</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Bahamas">Bahamas</option>
+        <option value="Bahrain">Bahrain</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Barbados">Barbados</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Belize">Belize</option>
+        <option value="Benin">Benin</option>
+        <option value="Bhutan">Bhutan</option>
+        <option value="Bolivia">Bolivia</option>
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+        <option value="Botswana">Botswana</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Brunei Darussalam">Brunei Darussalam</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Burkina Faso">Burkina Faso</option>
+        <option value="Burundi">Burundi</option>
+        <option value="Cabo Verde">Cabo Verde</option>
+        <option value="Cambodia">Cambodia</option>
+        <option value="Cameroon">Cameroon</option>
+        <option value="Canada">Canada</option>
+        <option value="Central African Republic">Central African Republic</option>
+        <option value="Chad">Chad</option>
+        <option value="Chile">Chile</option>
+        <option value="China">China</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Comoros">Comoros</option>
+        <option value="Congo (Congo-Brazzaville)">Congo (Congo-Brazzaville)</option>
+        <option value="Congo (Congo-Kinshasa)">Congo (Congo-Kinshasa)</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Cuba">Cuba</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Czech Republic">Czech Republic</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Djibouti">Djibouti</option>
+        <option value="Dominica">Dominica</option>
+        <option value="Dominican Republic">Dominican Republic</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Egypt">Egypt</option>
+        <option value="El Salvador">El Salvador</option>
+        <option value="Equatorial Guinea">Equatorial Guinea</option>
+        <option value="Eritrea">Eritrea</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Eswatini">Eswatini</option>
+        <option value="Ethiopia">Ethiopia</option>
+        <option value="Fiji">Fiji</option>
+        <option value="Finland">Finland</option>
+        <option value="France">France</option>
+        <option value="Gabon">Gabon</option>
+        <option value="Gambia">Gambia</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Ghana">Ghana</option>
+        <option value="Greece">Greece</option>
+        <option value="Grenada">Grenada</option>
+        <option value="Guatemala">Guatemala</option>
+        <option value="Guinea">Guinea</option>
+        <option value="Guinea-Bissau">Guinea-Bissau</option>
+        <option value="Guyana">Guyana</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Honduras">Honduras</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Iceland">Iceland</option>
+        <option value="India">India</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Iran">Iran</option>
+        <option value="Iraq">Iraq</option>
+        <option value="Ireland">Ireland</option>
+        <option value="Israel">Israel</option>
+        <option value="Italy">Italy</option>
+        <option value="Jamaica">Jamaica</option>
+        <option value="Japan">Japan</option>
+        <option value="Jordan">Jordan</option>
+        <option value="Kazakhstan">Kazakhstan</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Kiribati">Kiribati</option>
+        <option value="Korea (North)">Korea (North)</option>
+        <option value="Korea (South)">Korea (South)</option>
+        <option value="Kuwait">Kuwait</option>
+        <option value="Kyrgyzstan">Kyrgyzstan</option>
+        <option value="Laos">Laos</option>
+        <option value="Latvia">Latvia</option>
+        <option value="Lebanon">Lebanon</option>
+        <option value="Lesotho">Lesotho</option>
+        <option value="Liberia">Liberia</option>
+        <option value="Libya">Libya</option>
+        <option value="Liechtenstein">Liechtenstein</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Luxembourg">Luxembourg</option>
+        <option value="Madagascar">Madagascar</option>
+        <option value="Malawi">Malawi</option>
+        <option value="Malaysia">Malaysia</option>
+        <option value="Maldives">Maldives</option>
+        <option value="Mali">Mali</option>
+        <option value="Malta">Malta</option>
+        <option value="Marshall Islands">Marshall Islands</option>
+        <option value="Mauritania">Mauritania</option>
+        <option value="Mauritius">Mauritius</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Micronesia">Micronesia</option>
+        <option value="Moldova">Moldova</option>
+        <option value="Monaco">Monaco</option>
+        <option value="Mongolia">Mongolia</option>
+        <option value="Montenegro">Montenegro</option>
+        <option value="Morocco">Morocco</option>
+        <option value="Mozambique">Mozambique</option>
+        <option value="Myanmar (Burma)">Myanmar (Burma)</option>
+        <option value="Namibia">Namibia</option>
+        <option value="Nauru">Nauru</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Netherlands">Netherlands</option>
+        <option value="New Zealand">New Zealand</option>
+        <option value="Nicaragua">Nicaragua</option>
+        <option value="Niger">Niger</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="North Macedonia">North Macedonia</option>
+        <option value="Norway">Norway</option>
+        <option value="Oman">Oman</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Palau">Palau</option>
+        <option value="Panama">Panama</option>
+        <option value="Papua New Guinea">Papua New Guinea</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Peru">Peru</option>
+        <option value="Philippines">Philippines</option>
+        <option value="Poland">Poland</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Qatar">Qatar</option>
+        <option value="Romania">Romania</option>
+        <option value="Russia">Russia</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+        <option value="Saint Lucia">Saint Lucia</option>
+        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+        <option value="Samoa">Samoa</option>
+        <option value="San Marino">San Marino</option>
+        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+        <option value="Senegal">Senegal</option>
+        <option value="Serbia">Serbia</option>
+        <option value="Seychelles">Seychelles</option>
+        <option value="Sierra Leone">Sierra Leone</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Solomon Islands">Solomon Islands</option>
+        <option value="Somalia">Somalia</option>
+        <option value="South Africa">South Africa</option>
+        <option value="South Sudan">South Sudan</option>
+        <option value="Spain">Spain</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+        <option value="Sudan">Sudan</option>
+        <option value="Suriname">Suriname</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Syria">Syria</option>
+        <option value="Taiwan">Taiwan</option>
+        <option value="Tajikistan">Tajikistan</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Timor-Leste">Timor-Leste</option>
+        <option value="Togo">Togo</option>
+        <option value="Tonga">Tonga</option>
+        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+        <option value="Tunisia">Tunisia</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Turkmenistan">Turkmenistan</option>
+        <option value="Tuvalu">Tuvalu</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United Arab Emirates">United Arab Emirates</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States">United States</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="Uzbekistan">Uzbekistan</option>
+        <option value="Vanuatu">Vanuatu</option>
+        <option value="Vatican City">Vatican City</option>
+        <option value="Venezuela">Venezuela</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Yemen">Yemen</option>
+        <option value="Zambia">Zambia</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+    </select>
+    
+
+    <h3>Please rate the following statements</h3>
+    <p class="center-text">1 - Strongly disagree; 4 - Neither agree nor disagree; 7 - Strongly agree</p>
+
+    <br>
+
+    <div id="questions-container">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+     
+    <input type="hidden" name="question_order" id="question_order">
+    <button type="submit" onclick="setQuestionOrder()">Submit</button>
+</form>
+</div>
+
+<script>
+    const questions = [
+    "I live in an area that is densely populated with strangers.",
+    "I am exposed to very little amount of nature in my home environment.",
+    "I am not very close to a lot of people in my workplace/place of study.",
+    "I send a lot of texts every day.",
+    "I am generally not very physically active.",
+    "I exercise regularly.",
+    "I typically spend a large part of my leisure time sat on a chair or sofa.",
+    "I spend a large part of my life living alone.",
+    "On average, I get less than half an hour of exercise per day.",
+    "I have very limited interaction with most of the people in my neighbourhood.",
+    "I do not actually know most of the people in my neighbourhood.",
+    "I know most of my immediate neighbours.",
+    "I have very limited interaction with most of my relatives.",
+    "I am emotionally connected to very few of my family members and relatives.",
+    "I have very few family members and relatives who I could count on if I had big problems.",
+    "I frequently find that in order to get into an intimate relationship, I have to meet new people and flirt with them.",
+    "I spend a fair amount of time using apps or dating websites to hook up or have sex.",
+    "I spend a fair amount of time using apps or dating websites to look at or find potential romantic partners.",
+    "I feel that in general, I have to rely mostly, if not completely, on my own efforts if I want to get into a romantic relationship with someone.",
+    "I tend to regularly compare my life with those of other people on the social media.",
+    "I tend to regularly compare my appearance with those of other people on the social media.",
+    "I have a lot of \"friends\" on social media who are mere acquaintances that I don't know too well.",
+    "My friends generally use their electronic gadgets/phones/computers most of the time when I am with them.",
+    "I have very few, if any, close friends who I could count on if I had big problems.",
+    "I have very few, if any, close friends who I can talk to about my problems and deep secrets.",
+    "A large part of my diet generally consists of processed meat/vegetables such as those that have been cured, pickled or salted (e.g., lunch meats).",
+    "I do generally drink a lot of sweetened beverages.",
+    "A large part of my diet generally consists of food high in fat content.",
+    "I eat a lot of sugary stuff.",
+    "I regularly eat fresh fruits, vegetables and nuts.",
+    "I usually sleep alone.",
+    "I frequently use a lot of different beauty/grooming products to enhance my appearance.",
+    "I usually spend a considerable amount of time looking at myself in the mirror.",
+    "I usually spend a considerable amount of time looking at images/videos of myself.",
+    "I spend a lot of time on Facebook, Twitter, or other social media.",
+    "I am generally not listened to at my workplace/place of study."
+    ];
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    let originalOrder;
+
+    function generateQuestions() {
+        originalOrder = [...questions];
+        shuffleArray(questions);
+        console.log("Original Order:", originalOrder);
+        console.log("Randomization Order:", questions);
+        const container = document.getElementById('questions-container');
+        questions.forEach((question, index) => {
+            const questionHtml = `
+                <div class="question">
+                    <label>${question}</label>
+                    <div class="rating-container">
+                        <div class="rating">
+                            ${[1,2,3,4,5,6,7].map(value => `
+                                <label><input type="radio" name="score${index + 1}" value="${value}" required> ${value}</label>
+                            `).join('')}
+                        </div>
+                        <div class="scale-labels">
+                            <span class="label-left">Strongly Disagree</span>
+                            <span class="label-right">Strongly Agree</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += questionHtml;
+        });
+    }
+
+    function setQuestionOrder() {
+        const responses = [];
+        for (let i = 0; i < questions.length; i++) {
+            const score = document.querySelector(`input[name="score${i + 1}"]:checked`).value;
+            responses.push({ question: questions[i], score: score });
+        }
+        
+        // Reorder responses to match original order
+        const orderedResponses = originalOrder.map(q => 
+            responses.find(r => r.question === q)
+        );
+        
+        document.getElementById('question_order').value = JSON.stringify(orderedResponses);
+        console.log(JSON.parse(document.getElementById('question_order').value));
+
+    }
+
+    document.addEventListener('DOMContentLoaded', generateQuestions);
+</script>
+
+</body>
+</html>
