@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolutionary Mismatch Lifestyle - Results</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" charset="utf-8"></script>
+
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #0056b3;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-background: #fff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .group-scores {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .group-scores table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-scores th, .group-scores td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .group-scores th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        .group-scores tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #graph {
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 2rem auto;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .additional-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .publication-card {
+            background-color: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-card h3 {
+            margin-top: 0;
+        }
+
+        .publication-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .publication-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f1f1f1;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Evolutionary Mismatch Lifestyle</h1>
+    </header>
+
+    <main>
+        <h2>Your Evolutionary Mismatch Score</h2>
+        <h3>Your Total Mismatch Score (Out of 100): {{ score |round(2) }}</h3>
+        <h3>This means that {{ (100 - percentiles['total']) | round(2) }}% of the people who completed the form have a more mismatched lifestyle than you have!!</h3>
+
+
+        <section class="group-scores">
+            <h3>Your Group-wise Mismatch Scores and Statistics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Your Score</th>
+                        <th>Mean Population Score</th>
+                        <th>Your Mismatch Percentile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Home Environment</td>
+                        <td>{{ group_scores['group1']|round(2) }}</td>
+                        <td>{{ means['group1']|round(2) }}</td>
+                        <td>{{ percentiles['group1']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Physical Activity</td>
+                        <td>{{ group_scores['group2']|round(2) }}</td>
+                        <td>{{ means['group2']|round(2) }}</td>
+                        <td>{{ percentiles['group2']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Diet</td>
+                        <td>{{ group_scores['group3']|round(2) }}</td>
+                        <td>{{ means['group3']|round(2) }}</td>
+                        <td>{{ percentiles['group3']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Vanity</td>
+                        <td>{{ group_scores['group4']|round(2) }}</td>
+                        <td>{{ means['group4']|round(2) }}</td>
+                        <td>{{ percentiles['group4']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Romantic Relationships</td>
+                        <td>{{ group_scores['group5']|round(2) }}</td>
+                        <td>{{ means['group5']|round(2) }}</td>
+                        <td>{{ percentiles['group5']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media Usage</td>
+                        <td>{{ group_scores['group6']|round(2) }}</td>
+                        <td>{{ means['group6']|round(2) }}</td>
+                        <td>{{ percentiles['group6']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Social Support</td>
+                        <td>{{ group_scores['group7']|round(2) }}</td>
+                        <td>{{ means['group7']|round(2) }}</td>
+                        <td>{{ percentiles['group7']|round(2) }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Total Score</td>
+                        <td>{{ score|round(2) }}</td>
+                        <td>{{ means['total']|round(2) }}</td>
+                        <td>{{ percentiles['total']|round(2) }}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div id="graph"></div>
+
+        <section class="additional-info">
+            <h2>Further Reading</h2>
+            <div class="publication-card">
+                <h3>
+                    <a href="https://www.cell.com/heliyon/pdf/S2405-8440(24)11028-6.pdf" target="_blank">
+                        Mind the gap: Development and validation of an evolutionary mismatched lifestyle scale and its impact on health and wellbeing
+                    </a>
+                </h3>
+                <p class="authors">
+                    Jiaqing O, Trefor Aspden, Andrew G. Thomas, Lei Chang, Moon-Ho Ringo Ho, Norman P. Li, Mark van Vugt
+                </p>
+                <p class="journal-info">
+                    Cell Press - Heliyon<br>
+                    Departments of Psychology, Aberystwyth University, Swansea University, and collaborators
+                </p>
+                <p class="description">
+                    Research article exploring the development and validation of an evolutionary mismatched lifestyle scale 
+                    and its impact on health and wellbeing. This foundational study informs the assessment you've just completed.
+                </p>
+            </div>
+        </section>
+
+        <button onclick="window.location.href='/'">Submit Another Response</button>
+    </main>
+
+    <footer>
+        <p>Website by  
+        <a href="https://www.linkedin.com/in/kshiteesh-bhardwaj-88154520b/" target="_blank">Kshiteesh Bhardwaj</a>
+        </p>
+        <p>© 2024 Evolutionary Mismatch Lifestyle. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const graphData = JSON.parse('{{ graphJSON | safe }}');
+        Plotly.newPlot('graph', graphData.data, graphData.layout);
+    </script>
+</body>
+
+</html>
